@@ -6,7 +6,7 @@ const cors = require('cors');
 
 
 router.use(cors({
-    origin: 'http://localhost:4200',
+    origin: 'https://lovely-unicorn-d1f42b.netlify.app/',
     credentials: true // Allow credentials (cookies)
 }));
 
