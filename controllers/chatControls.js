@@ -26,18 +26,18 @@ async function addChat(req, res) {
         if (!req.file) {
             return res.status(400).json({ message: 'Image is required' });
         }
+        const response = await callGemini(req.file.buffer.toString('base64'), req.file.mimetype, req.prompt);
         const newChat = {
             prompt: req.body.prompt,
             image: {
                 data: req.file.buffer.toString('base64'),
                 contentType: req.file.mimetype
             },
-            response: req.body.response,
+            response: response,
         }
-
-        const chat = await chat_db.create(newChat);
-        const response = await callGemini(req.file.buffer.toString('base64'), req.file.mimetype, req.prompt);
         console.log(response);
+        const chat = await chat_db.create(newChat);
+
         return res.status(201).json({ "Response": response });
     }
     catch (err) {
