@@ -71,7 +71,7 @@ async function callGemini(data, contentType, prompt) {
     const genAI = new GoogleGenerativeAI(process.env.API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent([
-        `${prompt} + Give result in just the html h3 tag format`,
+        `${prompt} + Give the html h3 tag only`,
         {
             fileData: {
                 fileUri: uploadResult.file.uri,
