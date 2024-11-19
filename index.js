@@ -12,7 +12,7 @@ const port = 5000;
 app.use(express.json());
 app.use('/chats', chatRouter);
 app.use(cors({
-    origin: 'https://lovely-unicorn-d1f42b.netlify.app/',
+    origin: 'https://lovely-unicorn-d1f42b.netlify.app',
     credentials: true,
 }));
 
