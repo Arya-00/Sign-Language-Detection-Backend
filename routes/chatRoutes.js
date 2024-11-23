@@ -6,7 +6,7 @@ const cors = require('cors');
 
 
 router.use(cors({
-    origin: 'https://argo-sign-language-detection.netlify.app',
+    origin: ['https://argo-sign-language-detection.netlify.app', 'https://sign-language-detection-app.netlify.app'],
     credentials: true // Allow credentials (cookies)
 }));
 
