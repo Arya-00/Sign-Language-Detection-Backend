@@ -6,11 +6,10 @@ const cors = require('cors');
 
 
 router.use(cors({
-    origin: ['https://argo-sign-language-detection.netlify.app', 'https://sign-language-detection-app.netlify.app'],
-    credentials: true // Allow credentials (cookies)
+    origin: ['https://argo-sign-language-detection.netlify.app', 'https://sign-language-detection-app.netlify.app', "https://sign-language-detection-pwa.netlify.app"],
+    credentials: true
 }));
 
-// router.get('/single/:id', getChatById);
 router.get('/', getChats);
 router.post('/', upload.single('image'), addChat);
 

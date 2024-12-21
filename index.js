@@ -11,10 +11,6 @@ const port = 5000;
 
 app.use(express.json());
 app.use('/chats', chatRouter);
-app.use(cors({
-    origin: 'https://argo-sign-language-detection.netlify.app',
-    credentials: true,
-}));
 
 mongoose.connect(process.env.DB_KEY)
 .then(console.log("Database Connected Successfully"))
